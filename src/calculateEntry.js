@@ -9,3 +9,4 @@ function calculateEntry(entrants) {
 }
 
 module.exports = { calculateEntry, countEntrants };
+// apenas para fazer pull;
