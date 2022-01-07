@@ -17,9 +17,6 @@ function getRelatedEmployees(managerId) {
       .reduce((acc, employee) => acc.concat(`${employee.firstName} ${employee.lastName}`), []);
   }
 }
-
-const stephanieId = '9e7d4524-363c-416a-8759-8aa7e50c0992';
-console.log(getRelatedEmployees(stephanieId));
 // [ 'Burl Bethea', 'Ola Orloff', 'Emery Elser' ]
 
 module.exports = { isManager, getRelatedEmployees };

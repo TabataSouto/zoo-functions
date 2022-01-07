@@ -13,5 +13,4 @@ function getAnimalsOlderThan(animal, age) {
   return findSpecies;
 }
 
-console.log(getAnimalsOlderThan('penguins', 10));
 module.exports = getAnimalsOlderThan;
