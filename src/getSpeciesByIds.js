@@ -1,4 +1,4 @@
-const data = require('../data/zoo_data');
+const { species } = require('../data/zoo_data');
 
 // caso o parametro seja vazio retornar [];
 // ao receber um id como parâmetro, retorna o array da espécie;
@@ -6,14 +6,12 @@ const data = require('../data/zoo_data');
 
 function getSpeciesByIds(...ids) {
   // seu código aqui
-  const { species } = data;
-  // como o retorno final é um array, é preciso declarar um array vazio para armazenar o resultado;
-  const findSpecies = [];
+  const findSpecies = ids
+    // map para percorrer os ids passados no parâmetro na chamada da função;
+    .map((idsParam) => species
+      // find para encontrar o id passado no parametro dentro do objeto species;
+      .find(({ id }) => id === idsParam));
 
-  // o forEach serve para percorrer todos os ids declarados no parametro ao chamar a função, e ao fazer isso, é atribuido o resultado dentro do nosso array vazio;
-  ids.forEach((id) => {
-    findSpecies.push(species.find((specie) => id === specie.id));
-  });
   return findSpecies;
 }
 
