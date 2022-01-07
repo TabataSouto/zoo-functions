@@ -17,4 +17,5 @@ function getSpeciesByIds(...ids) {
   return findSpecies;
 }
 
+console.log(getSpeciesByIds());
 module.exports = getSpeciesByIds;
