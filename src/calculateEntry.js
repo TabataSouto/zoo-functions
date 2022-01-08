@@ -23,8 +23,8 @@ function calculateEntry(entrants) {
 
   const func = countEntrants(entrants);
   const calcNumber = child * func.child
-                    + adult * func.adult
-                    + senior * func.senior;
+                   + adult * func.adult
+                   + senior * func.senior;
   return calcNumber;
 }
 
