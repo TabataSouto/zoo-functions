@@ -5,27 +5,24 @@ const { species } = require('../data/zoo_data');
 // 3. Recebendo como parâmetro um objeto com a chave specie e sex, retorna um número, a quantidade de animais daquela espécie, no sexo selecionado.
 
 function countAnimals(animal) {
-  // retorno referência: 1;
+  // retorno parte 1;
   if (!animal) {
     return species.reduce((acc, { name, residents }) => {
       acc[name] = residents.length;
       return acc;
     }, {});
   }
-  // retorno referência: 2;
+  // retorno parte 2;
   const { specie, sex: sexAnimal } = animal;
   if (Object.keys(animal).length < 2) {
     return species.find(({ name }) =>
       animal.specie.includes(name)).residents.length;
   }
-  // retorno referência: 3;
+  // retorno parte 3 (referência monitoria com Mario Júnior);
   return species.find(({ name }) =>
     name === specie).residents
     .filter(({ sex }) =>
       sexAnimal === sex).length;
 }
 
-// console.log(countAnimals());
-// console.log(countAnimals({ specie: 'penguins' })); // 4;
-// console.log(countAnimals({ specie: 'bears', sex: 'female' })); // 0
 module.exports = countAnimals;
