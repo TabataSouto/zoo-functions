@@ -10,7 +10,7 @@ function getOldestFromFirstSpecies(id) {
     .find(({ id: idEmp }) => id.includes(idEmp))
     .responsibleFor;
 
-  // encontrar a espécie;
+  // encontrar a espécie e retornar o mais velho;
   const filterSpecie = species
     .find(({ id: idSpe }) => filterEmplyeeResp.includes(idSpe)).residents
     .sort((a, b) => b.age - a.age)[0];
@@ -18,5 +18,4 @@ function getOldestFromFirstSpecies(id) {
   return Object.values(filterSpecie);
 }
 
-console.log(getOldestFromFirstSpecies('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
 module.exports = getOldestFromFirstSpecies;
