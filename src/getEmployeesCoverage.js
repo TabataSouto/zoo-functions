@@ -23,13 +23,16 @@ function findSpecies(pastSpec) {
 // ------------------------- função que trás o objeto desejado;
 function getEmployeesCoverage(emplyee) {
   if (!emplyee) {
-    return 'Id passado não é válido';
+    return employees.map((employe) => ({
+      id: employe.id,
+      fullName: `${employe.firstName} ${employe.lastName}`,
+      species: findSpecies(employe).map(({ name }) => name),
+      locations: findSpecies(employe).map(({ location }) => location),
+    }));
   }
-
   if (!findEmployees(emplyee)) {
     throw new Error('Informações inválidas');
   }
-
   const { id, firstName, lastName } = findEmployees(emplyee);
   return {
     id,
