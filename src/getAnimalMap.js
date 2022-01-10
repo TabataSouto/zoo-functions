@@ -33,7 +33,8 @@ function filterOrderName(objThree) {
   return species.reduce((acc, { location, name, residents }) => {
     // const para trazer apenas o nome dos residentes (animais) ordenados;
     const res = residents
-      .map((val) => val.name).sort();
+      .map((val) => val.name)
+      .sort();
     // acc acessa a chave do objeto e adiciona com o push o valor da chave dentro do array;
     if (location === 'NE') acc.NE.push({ [name]: res });
     if (location === 'NW') acc.NW.push({ [name]: res });
@@ -65,7 +66,8 @@ function filterOrderSex(objFour) {
     // const para trazer apenas o nome dos residentes (animais) filtrados por sexo ordenado;
     const res = residents
       .filter(({ sex }) => sex === objFour.sex)
-      .map((val) => val.name).sort();
+      .map((val) => val.name)
+      .sort();
     // acc acessa a chave do objeto e adiciona com o push o valor da chave dentro do array;
     if (location === 'NE') acc.NE.push({ [name]: res });
     if (location === 'NW') acc.NW.push({ [name]: res });
