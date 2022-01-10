@@ -5,7 +5,6 @@ const { species } = require('../data/zoo_data');
 // ao receber mais de um id, retorna array das espécies;
 
 function getSpeciesByIds(...ids) {
-  // seu código aqui
   return ids
     // map para percorrer os ids passados no parâmetro na chamada da função;
     .map((idsParam) => species
