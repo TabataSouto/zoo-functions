@@ -1,3 +1,5 @@
+Obs: O arquivo DATA foi feito pela TRYBE para que os requisitos fossem atendidos.
+
 Requisitos do projeto
 1. [x] Implemente a função getSpeciesByIds
 2. [x] Implemente a função getAnimalsOlderThan
